@@ -48,8 +48,9 @@ const PieChartCom = () => {
 
         <div className="w-full flex justify-around items-center">
 
-        {data01.map((entry, index) => (
-            <div className="flex justif-center items-center">
+        {
+        data01?.map((entry, index) => (
+            <div className="flex justify-center items-center" key={index}>
                 <div className={`w-3 h-3 bg-[${COLORS[index]}]`}></div>
                 <p style={{fontSize:'12px'}} className="ml-1 font-semibold">{entry.name}</p>
             </div>

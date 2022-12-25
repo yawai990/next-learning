@@ -3,7 +3,7 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 
 const Pagination = () => {
   return (
-    <div className='w-full h-12 bg-white text-black py-2 flex justify-end rounded-b'>
+    <div className='w-full min-h-[30px] bg-white text-black py-2 flex justify-end rounded-b border-t border-2 border-t-grau-500'>
         <div className="w-5/12 flex items-center gap-2">
             <div className='flex items-center gap-2'>
             <button className='p-2 text-white bg-primary text-lg rounded'>

@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundColor :{
-        'primary' :'#623B22'
+        'primary' :'#623B22',
+        'tb-btn' : '#D0CDCC'
       }
     },
   },
