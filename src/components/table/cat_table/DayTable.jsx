@@ -1,5 +1,4 @@
-import Pagination from "./Pagination";
-import TableHeadBar from "./TableHeadBar";
+
 
 const data = {
   "studentData" :[{
@@ -53,18 +52,14 @@ const data = {
     "status": 2,
     "latency": "4:58 AM"
   }],
-  "cur_page" : 1,
-  "pagination" : 3,
+  "cur_page" : 5,
+  "pagination" : 15,
 }
 
-const Table = () => {
+const Table = ({ pathname }) => {
   
-  return (   
-     <div className='w-full h-5/6 bg-white'>
-
-       <TableHeadBar />
-
-      <table className='w-full min-h-[45px] leading-[45px] bg-[#D0CDCC] pb-2'>
+  return (      
+      <table className='w-full min-h-[45px] leading-[45px] bg-tb-btn pb-2'>
         <thead className='border-b border-gray-100'>
           <tr>
           <th className='w-1/12'>No</th>
@@ -84,9 +79,16 @@ const Table = () => {
               <td className='text-center'>{stu.name}</td>
 
               <td className='px-2 py-1 flex justify-center items-center gap-3'>
-                <button className={`${stu.status === 1 ? 'bg-green-600 text-white':'bg-tb-btn'} px-2 rounded-lg capitalize`}>present</button>
-                <button className={`${stu.status === 2 ? 'bg-red-600 text-white':'bg-tb-btn'} px-2 rounded-lg capitalize`}>absent</button>
-                <button className={`${stu.status === 3 ? 'bg-orange-600 text-white':'bg-tb-btn'} px-2 rounded-lg capitalize`}>late</button>
+
+                <span>
+                <span className={`${stu.status === 1 ? 'bg-green-600 text-white':'bg-tb-btn'} px-2 text-sm rounded-lg capitalize`}>present</span>
+                </span>
+                <span>
+                <span className={`${stu.status === 2 ? 'bg-red-600 text-white':'bg-tb-btn'} px-2 text-sm rounded-lg capitalize`}>absent</span>
+                </span>
+                <span>
+                <span className={`${stu.status === 3 ? 'bg-orange-600 text-white':'bg-tb-btn'} px-2 text-sm rounded-lg capitalize`}>late</span>
+                </span>
 
               </td>
               <td className='text-center'> {stu.latency} </td>
@@ -95,9 +97,6 @@ const Table = () => {
           }
         </tbody>
       </table>
-
-      <Pagination />
-    </div>
   )
 }
 

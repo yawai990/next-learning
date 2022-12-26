@@ -1,6 +1,6 @@
 import { AiOutlineSearch } from 'react-icons/ai';
 
-const TableHeadBar = () => {
+const TableHeadBar = ({ pathname }) => {
   return (
     <section className='w-full h-12 bg-primary px-4 text-white flex justify-between items-center'>
 
@@ -11,7 +11,13 @@ const TableHeadBar = () => {
         </div>
 
         <div>
+          {
+            pathname === '/datas' ? <p>This Month</p>
+            :
+            pathname === '/datas/today' ? 
           <p>Today, March 22nd 2022</p>
+          :''
+          }
         </div>
 
         <div className='min-w-[250px] bg-white rounded flex items-center flex-row-reverse px-1'>

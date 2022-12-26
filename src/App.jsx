@@ -11,6 +11,8 @@ const App = () => {
         <Route path='/qr_generated' element={<GeneratedQR />} />
         <Route path='/qr_scan' element={<ScanQR />} />
         <Route path='/datas' element={<Datas />} />
+        <Route path='/datas/today' element={<Datas />} />
+        <Route path='/datas/today/statis' element={<Datas />} />
       </Routes>
     </BrowserRouter >
   )

@@ -24,9 +24,11 @@ const GenerateQR = () => {
 
     handleSetQR(generateQRData);
 
+    //to do : before navigate to the generated QR, send the data to the backend
     elements.stu_name.value ='';
     elements.stu_email.value ='';
     elements.stu_class.value ='';
+
 
     navigate('/qr_generated')
 
