@@ -5,7 +5,7 @@ import { AiFillYoutube, AiOutlineInstagram } from "react-icons/ai";
 function Footer() {
   return (
     <>
-      <footer className="bg-primary-color text-white ">
+      <footer className="bg-dark-brown-color text-white ">
         <div className="flex flex-col lg:flex-row justify-between px-10 md:px-16 lg:px-20">
           {/* Contact Us */}
           <div className="my-8 lg:my-10">
