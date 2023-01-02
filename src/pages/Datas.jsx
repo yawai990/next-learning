@@ -13,13 +13,13 @@ const classData = [
 
 const Datas = () => {
   const { pathname } = useLocation();
-  const [ showPopup, setShowPopup ] = useState(true);
+  const [ showPopup, setShowPopup ] = useState(false); //to do
 
   const HandlePopup = () => setShowPopup(!showPopup)
 
 
   return (
-    <section className='w-10/12 mx-auto overflow-x-hidden mb-5 relative'>
+    <section className='w-10/12 mx-auto mb-5 relative'>
 
       {
         showPopup && <Model HandlePopup={HandlePopup} />

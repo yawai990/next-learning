@@ -8,6 +8,34 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+}
+
+.skeleton {
+  background-color: red;
+  position: relative;
+  
+  animation: all 1s infinite; 
+  /* overflow: hidden; */
+}
+.skeleton::before{
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* background-color: blue; */
+  animation: all 1s infinite; 
+};
+
+@keyframes skeletonAni {
+  0%{
+    transform: translateX(-100%);
+  }
+  100%{
+    transform: translateX(100%);
+  }
 }
 
 @tailwind base;

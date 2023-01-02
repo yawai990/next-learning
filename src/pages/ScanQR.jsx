@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import AppWrap from '../HOC/HOC';
-import { AiOutlineScan } from 'react-icons/ai';
+import { AiOutlineScan, AiOutlineCloseCircle } from 'react-icons/ai';
 import { IoIosQrScanner } from 'react-icons/io';
 import QrReader from 'react-qr-scanner';
+import QRError from '../components/QRError';
 
 const ScanQR = () => {
 
@@ -22,8 +23,20 @@ const ScanQR = () => {
 
 
  return (
-    <div className='mt-10 flex justify-center items-center flex-col'>
+    <div className='mt-10 flex justify-center items-center flex-col relative'>
     <h3>Click on the shutter button to scan QR codes</h3>
+
+    <div className="w-full h-full absolute bg-white rounded-xl">
+      <div className='text-end p-4'>
+        <button className='p-1 text-2xl bg-white rounded-full drop-shadow-lg'>
+          <AiOutlineCloseCircle />
+        </button>
+      </div>
+
+      <div className='flex flex-col justify-center items-center'>
+      <QRError />
+      </div>
+    </div>
 
     <div className='w-64 h-64'>
       {
