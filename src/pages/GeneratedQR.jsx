@@ -29,7 +29,12 @@ const GeneratedQR = () => {
       <div className='w-64 h-64 bg-primary p-2 rounded mb-4'>
         {
           qrData && qrData !== undefined &&
-        <QRCode value={`${qrData.email},${qrData.classID}`} id='qr' className='w-full h-full' />
+        <QRCode 
+        value={`${qrData.email},${qrData.classID}`} 
+        bgColor="#623B22"
+        fgColor='#f4f4f4'
+        level='M'
+        id='qr' className='w-full h-full' />
         }
       </div>
 
