@@ -1,5 +1,6 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Layout from './Layout';
+import FAQ from './pages/FAQ';
 import Home from './pages/Home';
 
 function App() {
@@ -13,6 +14,10 @@ function App() {
         path: "/",
         element: <Home />,
       },
+      {
+        path: '/faqs',
+        element: <FAQ />
+      }
     ],
   },
 ]);

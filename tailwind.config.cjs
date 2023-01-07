@@ -8,6 +8,7 @@ module.exports = {
       "dark-brown-color": "#3C2415",
       "neutral-black-color": "#170D08",
       "disabled-color": "#AEA6A2",
+      "neutral-tint-white": "#F1E6E0",
       // CyanBlue : "#00203F",
       // MagicMint : "#ADEFD1",
       // WhiteSmoke : "#F5F5F5",

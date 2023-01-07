@@ -8,7 +8,10 @@ const Layout = () => {
   return (
     <main className='w-screen h-screen'>
         <Header />
-        <Outlet />
+        <div className='bg-neutral-tint-white'>
+          <Outlet />
+        </div>
+
         <Footer />
     </main>
   )
