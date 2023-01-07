@@ -5,29 +5,31 @@ import 'react-calendar/dist/Calendar.css';
 import './calendar.css';
 
 const CalendarComponent = () => {
-  const [ date, setDate ]  = useState();
+  const [ date, setDate ]  = useState(new Date());
   const navigate = useNavigate();
 
   const handleSetDate = e =>{
      setDate(new Date())
-     navigate('/datas/today')
     };
+
+  const handleMonth = e =>{
+    navigate('/datas/month')
+  }
 
 
   const handleChange = e =>{
 
     //call the api for the data
     setDate(e)
-    navigate('/datas/today')
   }
   return (
-    <div>
-      <button 
-      className='text-sm bg-primary rounded-r-full text-white py-1 px-2 mb-2 capitalize'
-      onClick={handleSetDate}
-      >go today</button>
-      <Calendar onChange={handleChange} value={date} />
-
+    <div className='w-full'>
+      <Calendar 
+      className='w-full'
+      onChange={handleChange} 
+      value={date}
+      onClickMonth={handleMonth}
+      />
     </div>
   )
 }

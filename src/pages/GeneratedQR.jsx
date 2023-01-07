@@ -1,19 +1,17 @@
 import { useState, useEffect } from 'react';
 import AppWrap from '../HOC/HOC';
 import QRCode from 'react-qr-code';
-import { useGlobalContext } from '../context';
 import { saveSvgAsPng } from 'save-svg-as-png';
 import { useNavigate } from 'react-router-dom';
 
 const GeneratedQR = () => {
-  const { qrData } = useGlobalContext();
   const navigate = useNavigate();
 
-  useEffect(() =>{
-    if(qrData === undefined) {
-      return navigate('/qr_generate')
-    }
-  },[qrData]);
+  // useEffect(() =>{
+  //   if(qrData === undefined) {
+  //     return navigate('/qr_generate')
+  //   }
+  // },[qrData]);
 
  
   const handleDownload = e =>{
@@ -27,26 +25,22 @@ const GeneratedQR = () => {
       <h3 className='font-semibold mb-2'>QR Code generating process has finished</h3>
 
       <div className='w-64 h-64 bg-primary p-2 rounded mb-4'>
-        {
-          qrData && qrData !== undefined &&
+
+        {/* to do : add real QR image */}
         <QRCode 
-        value={`${qrData.email},${qrData.classID}`} 
+        value={`yawai`} 
         bgColor="#623B22"
         fgColor='#f4f4f4'
         level='M'
         id='qr' className='w-full h-full' />
-        }
       </div>
 
-      {
-        qrData && qrData !== undefined &&  <div className='w-64'>
-        <p className='mb-2'>Name : <span>{qrData.name}</span></p>
-        <p>Student ID : <span>{qrData.classID}</span></p>
+      <div className='w-64'>
+
+        {/* to do : insert Real QR Data */}
+        <p className='mb-2'>Name : <span>name</span></p>
+        <p>Student ID : <span>qr class ID</span></p>
       </div>
-
-      }
-
-      
 
     <div className='flex justify-center items-center mt-10'>
 

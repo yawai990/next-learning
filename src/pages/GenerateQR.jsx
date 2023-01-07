@@ -1,11 +1,9 @@
-import React from 'react';
 import AppWrap from '../HOC/HOC';
-import { useGlobalContext } from '../context';
 import { useNavigate } from 'react-router-dom';
+import * as api from '../api';
+
 
 const GenerateQR = () => {
-  const { qrData,handleSetQR } = useGlobalContext();
-  
   const navigate = useNavigate();
   
   const handleSubmit = e => {
@@ -14,23 +12,31 @@ const GenerateQR = () => {
 
     const elements = e.currentTarget.elements;
 
-    const name = elements.stu_name.value;
-    const email = elements.stu_email.value;
-    const classID = elements.stu_class.value;
+    const name = elements.name.value;
+    const role = elements.role.value;
+    const classId = elements.classId.value;
+    const studentId = elements.studentId.value;
 
+    //to do 
     const generateQRData = {
-      name,email,classID
+      name,
+      role,
+      studentId,
+      classId
     };
 
-    handleSetQR(generateQRData);
+    api.GenerateQR(generateQRData)
+    .then(resp => {
+      console.log(resp)
+      navigate('/qr_generated')
+    })
+    .catch(err => console.log(err))
 
     //to do : before navigate to the generated QR, send the data to the backend
     elements.stu_name.value ='';
     elements.stu_email.value ='';
     elements.stu_class.value ='';
-
-
-    navigate('/qr_generated')
+    elements.stu_attendance_id.value = '';
 
   };
 
@@ -42,27 +48,42 @@ const GenerateQR = () => {
         <form action="" className='w-2/6 m-auto p-4w' onSubmit={handleSubmit}>
 
             <div className='mb-3'>
-              <label htmlFor="stu_name" className='block mb-1'>Student's Name</label>
+              <label htmlFor="name" className='block mb-1'>Student's Name</label>
               <input type="text" 
-              name='stu_name'
-              className='w-full p-1 rounded outline-none border border-grey-400 block'
+              name='name'
+              className='w-full p-1 rounded outline-none border block bg-transparent border-primary placeholder:text-[#827272] py-2'
               placeholder="Add studend's name" />
             </div>
 
             <div className='mb-3'>
-              <label htmlFor="stu_name" className='block mb-1'>Student's Email</label>
-              <input type="text" 
-              name='stu_email'
-              className='w-full p-1 rounded outline-none border border-grey-400 block'
-              placeholder="Add studend's email" />
+              <label htmlFor="role" className='block mb-1'>Role</label>
+              <select name="role" id="role" defaultValue={'0'} 
+              className='w-full p-1 rounded outline-none border block bg-transparent border-primary py-2' 
+              >
+                <option value="0" disabled>Role</option>
+                <option value="student">Student</option>
+                <option value="staff">Staff</option>
+              </select>
             </div>
 
-            <div className='mb-3'>
-              <label htmlFor="stu_name" className='block mb-1'>Class ID</label>
+            <div className='mb-3 flex justify-between items-center gap-4'>
+
+              <div className='w-3/6'>
+              <label htmlFor="classId" className='block mb-1'>Class</label>
               <input type="text" 
               name='stu_class'
-              className='w-full p-1 rounded outline-none border border-grey-400 block'
+              className='w-full p-1 rounded outline-none border block bg-transparent border-primary placeholder:text-[#827272] py-2'
               placeholder="Add class ID" />
+              </div>
+
+              <div className='w-3/6'>
+              <label htmlFor="studentId" className='block mb-1'>ID</label>
+              <input type="text" 
+              name='stu_attendance_id'
+              className='w-full p-1 rounded outline-none border block bg-transparent border-primary placeholder:text-[#827272] py-2'
+              placeholder="Add Attendance ID" />
+              </div>
+
             </div>
 
             <div className='flex justify-center items-center flex-col'>

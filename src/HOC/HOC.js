@@ -27,7 +27,11 @@ const buttonDatas = [
 
 const AppWrap = ( Component ) => () =>{
     return  <div 
-    className="w-screen h-auto min-h-screen flex items-center flex-col bg-secondary overflow-x-hidden"
+    style={{
+      overflow:'hidden'
+    }}
+    className="w-[100vw]
+     h-auto min-h-screen flex bg-secondary items-center flex-col"
     >
                <div className='flex gap-4 mt-5'>
         {

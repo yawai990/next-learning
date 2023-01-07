@@ -30,7 +30,8 @@ const PieChartCom = () => {
 };
 
   return (
-    <div className="w-full flex justify-center items-start bg-[#D9D9D9] mt-5 flex-col pb-4">
+    <div 
+    className="w-full flex justify-center items-center bg-[#D9D9D9] mt-5 flex-col pb-4">
     
         <PieChart width={250} height={250}>
         <Pie data={data01} 

@@ -93,7 +93,10 @@ const ScanQR = () => {
         onScan={handleScan}
         />
         </div>: !scanComplete ?
-      <IoIosQrScanner className='w-64 h-64 text-sm' />:
+      <div className='my-5'>
+      <img src="/img/border.png" alt="" className='w-64 h-64 object-cover' />
+      </div>
+      :
       <div className='w-64 h-64 my-4'>
           <img src="/img/QR.png" alt="" className='w-full h-full' />
       </div>

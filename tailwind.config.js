@@ -10,6 +10,9 @@ module.exports = {
         'secondary' : '#DFBAA5',
         'tb-btn' : '#D0CDCC'
       },
+      borderColor:{
+        'primary' :'#623B22',
+      },
       colors : {
         'primary' :'#623B22',
         'secondary' : '#DFBAA5',

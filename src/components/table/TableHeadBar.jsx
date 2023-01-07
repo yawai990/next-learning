@@ -12,12 +12,12 @@ const TableHeadBar = ({ pathname }) => {
 
         <div>
           {
-            pathname === '/datas' ? <p>This Month</p>
+            pathname === '/datas' ? <p>Today, March 22nd 2022</p>
             :
-            pathname === '/datas/today' ? 
+            pathname === '/datas/month' ? 
 
             //to do 
-          <p>Today, March 22nd 2022</p>
+          <p>This Month</p>
           :''
           }
         </div>
